@@ -10,10 +10,10 @@ RUN apt-get update && apt-get install -y build-essential python apt-utils curl a
 #RUN apt-get install -y nodejs
 
 #RUN sed -i '/^rlimit-nproc/s/^\(.*\)/#\1/g' /etc/avahi/avahi-daemon.conf
-RUN sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen && \dpkg-reconfigure --frontend=noninteractive locales && \update-locale LANG=de_DE.UTF-8
-ENV LANG de_DE.UTF-8 
-RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
-ENV TZ Europe/Berlin
+#RUN sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen && \dpkg-reconfigure --frontend=noninteractive locales && \update-locale LANG=de_DE.UTF-8
+#ENV LANG de_DE.UTF-8 
+#RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+#ENV TZ Europe/Berlin
 
 RUN mkdir -p /opt/hyperion/ && chmod 777 /opt/hyperion/
 #RUN mkdir -p /opt/scripts/ && chmod 777 /opt/scripts/
